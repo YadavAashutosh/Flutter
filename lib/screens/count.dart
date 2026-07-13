@@ -15,8 +15,10 @@ class _CountpageState extends State<Countpage> {
   Widget build(BuildContext context){
     return Scaffold (
         appBar : AppBar( title : Text("$count")),
-        body : Center(
-          child : ElevatedButton (
+        body : Column ( 
+
+          children : [
+             ElevatedButton (
             onPressed : (){
               setState (() {
                 count ++ ; 
@@ -24,7 +26,9 @@ class _CountpageState extends State<Countpage> {
             },
             child : Text("count +")
           ),
-        ),
+        
+         Container( width : 150 , height : 150  ,  color : Colors.grey , child : Text( "Container text ") ,)
+       ], ),
       
 
     );
