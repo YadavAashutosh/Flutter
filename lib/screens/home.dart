@@ -9,8 +9,13 @@ class HomePage extends StatelessWidget {
 Widget build(BuildContext context){
     return  Scaffold(
         appBar : AppBar( 
+          leading : Icon(Icons.menu),
           title : Row (
+             
+            mainAxisAlignment : MainAxisAlignment.center,
+    
            children : [ 
+            
                Icon(Icons.home),
                SizedBox(width: 8),
                GestureDetector(
@@ -27,6 +32,8 @@ Widget build(BuildContext context){
                                 )
         ],
         ),
+
+        actions : [ CircleAvatar( backgroundColor: Colors.blue, child : Text("A") )],
         backgroundColor : Colors.amber,
         ),
         body: Center(
