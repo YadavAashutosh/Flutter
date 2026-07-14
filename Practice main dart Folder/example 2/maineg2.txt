@@ -17,25 +17,37 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body : Center (
-          child : Container (
-            width : 400,
-            height: 400,
-            alignment : Alignment.center,
-            decoration : BoxDecoration(
-              color : Colors.grey,
-              borderRadius: BorderRadius.circular(4000)),
-              child : ClipOval(
-               
-               child : SizedBox (
-                 width : 200 , height : 200 ,
-                child : Image.asset("images/profileimg.webp" , fit : BoxFit.cover)
-               ),
-              )
-            )
-          )
-        )
-      );
-  
+        body: Column(
+          children: [
+            Container(
+              width: 400,
+              height: 400,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(4000),
+              ),
+              child: ClipOval(
+                child: SizedBox(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset(
+                    "images/profileimg.webp",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            Flexible(
+              child: Align(
+                alignment: Alignment(-1, 0),
+
+                child: CircleAvatar(child: Text("A")),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
