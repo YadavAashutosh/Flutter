@@ -1,0 +1,57 @@
+import "package:flutter/material.dart";
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          leading: Icon(Icons.menu),
+          backgroundColor: Colors.blueGrey,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    count++;
+                  });
+                },
+                child: Text(
+                  "TAP",
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(200),
+                decoration: BoxDecoration(
+                  color: Colors.teal,
+                  border: Border.all(width: 10),
+                  borderRadius: BorderRadius.circular(20000),
+                ),
+                child: CircleAvatar(
+                  radius: 80,
+                  child: Text('$count', style: TextStyle(fontSize: 50)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
